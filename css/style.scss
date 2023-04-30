@@ -1,0 +1,49 @@
+.container{
+    width: 704px;
+    margin: 0 auto;
+}
+.text{
+    &__field{
+        width: 99%;
+        height: 200px;
+        padding: 10px;
+        &:active, &:focus{
+            outline: none;
+        }
+    }
+}
+
+.keyboard{
+    display: block;
+    border: 2px solid rgba(70, 67, 67, 0.329);
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    &__button{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 3px;
+        padding: 3px;
+        float: left;
+        &:hover{
+            background-color: rgba(255, 0, 0, 0.13);
+            outline: 0;
+        }
+        &:focus{
+            outline: 0;
+        }
+        &.active{
+            background-color: rgba(255, 0, 0, 0.356);
+            outline: 0;
+        }
+    }
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
