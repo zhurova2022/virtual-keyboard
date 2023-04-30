@@ -80,10 +80,11 @@ const keyboard = document.createElement('div');
 keyboard.className = 'keyboard';
 document.body.append(keyboard);
 
+const keys = Object.keys(KeyCodes);
+const values = Object.values(KeyCodes);
+
 function init() {
   let out = '';
-  const keys = Object.keys(KeyCodes);
-  const values = Object.values(KeyCodes);
   for (let i = 0; i < keys.length; i += 1) {
     out += `<button class="keyboard__button button_${keys[i]}" data="${keys[i]}" >${values[i]}</button>`;
   }
@@ -92,11 +93,18 @@ function init() {
 init();
 
 document.addEventListener('keydown', (event) => {
-  textarea.innerHTML += `${event.key}\n`;
-  document.querySelectorAll('.keyboard .keyboard__button').forEach((element) => {
-    element.classList.remove('active');
-  });
-  document.querySelector(`.keyboard .keyboard__button[data=${event.code}]`).classList.add('active');
+  textarea.innerHTML += `${event.key}`;
+  for (let i = 0; i < keys.length; i += 1) {
+    document.querySelector(`.keyboard .keyboard__button[data=${event.code}]`).classList.add('active');
+  }
+});
+
+document.addEventListener('keyup', () => {
+  for (let i = 0; i < keys.length; i += 1) {
+    document.querySelectorAll('.keyboard .keyboard__button').forEach((element) => {
+      element.classList.remove('active');
+    });
+  }
 });
 
 document.querySelectorAll('.keyboard .keyboard__button').forEach((element) => {
@@ -106,6 +114,6 @@ document.querySelectorAll('.keyboard .keyboard__button').forEach((element) => {
     });
     const code = element.getAttribute('data');
     element.classList.add('active');
-    textarea.innerHTML += `${KeyCodes[code]}\n`;
+    textarea.innerHTML += `${KeyCodes[code]}`;
   });
 });
