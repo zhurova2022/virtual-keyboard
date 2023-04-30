@@ -109,11 +109,16 @@ document.addEventListener('keyup', () => {
 
 document.querySelectorAll('.keyboard .keyboard__button').forEach((element) => {
   element.addEventListener('click', () => {
-    document.querySelectorAll('.keyboard .keyboard__button').forEach((el) => {
-      el.classList.remove('active');
-    });
     const code = element.getAttribute('data');
     element.classList.add('active');
     textarea.innerHTML += `${KeyCodes[code]}`;
   });
+});
+
+document.addEventListener('mouseout', () => {
+  for (let i = 0; i < keys.length; i += 1) {
+    document.querySelectorAll('.keyboard .keyboard__button').forEach((element) => {
+      element.classList.remove('active');
+    });
+  }
 });
