@@ -29,6 +29,7 @@
         margin: 3px;
         padding: 3px;
         float: left;
+        transition: border-radius 0.3s, background-color 0.3s;
         &:hover{
             background-color: rgba(255, 0, 0, 0.13);
             outline: 0;
@@ -36,7 +37,7 @@
         &:focus{
             outline: 0;
         }
-        &.active{
+        &.active, &.click{
             background-color: rgba(255, 0, 0, 0.356);
             outline: 0;
         }
@@ -68,3 +69,9 @@
     width: 330px;
 }
 
+.upper { text-transform: uppercase; }
+
+.title,
+.description{
+    text-align: center;
+}
