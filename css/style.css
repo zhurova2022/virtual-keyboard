@@ -1,0 +1,79 @@
+.container {
+  width: 704px;
+  margin: 0 auto;
+}
+
+.text__field {
+  width: 99%;
+  height: 200px;
+  padding: 10px;
+}
+.text__field:active, .text__field:focus {
+  outline: none;
+}
+
+.keyboard {
+  display: block;
+  border: 2px solid rgba(70, 67, 67, 0.329);
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+}
+.keyboard__button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 3px;
+  float: left;
+  -webkit-transition: border-radius 0.3s, background-color 0.3s;
+  -o-transition: border-radius 0.3s, background-color 0.3s;
+  transition: border-radius 0.3s, background-color 0.3s;
+}
+.keyboard__button:hover {
+  background-color: rgba(255, 0, 0, 0.13);
+  outline: 0;
+}
+.keyboard__button:focus {
+  outline: 0;
+}
+.keyboard__button.active, .keyboard__button.click {
+  background-color: rgba(255, 0, 0, 0.356);
+  outline: 0;
+}
+.keyboard::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.button_Backspace,
+.button_CapsLock,
+.button_ShiftLeft {
+  width: 100px;
+}
+
+.button_Delete,
+.button_Tab {
+  width: 47px;
+}
+
+.button_Enter,
+.button_ShiftRight {
+  width: 86px;
+}
+
+.button_Space {
+  width: 330px;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.title,
+.description {
+  text-align: center;
+}
